@@ -1,0 +1,230 @@
+:root {
+    --gap: 20px;
+    --grid-gap: 24px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto';
+    background-color: #FFFFFF;
+    ;
+    padding: 123px 120px 1298px 120px;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    gap: var(--gap);
+}
+
+.first-row-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 171px;
+    width: 171px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+}
+
+.second-row {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    gap: var(--gap);
+}
+
+.second-row-card-first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 266px;
+    height: 171px;
+    background-color: #ffffff;
+    border: 1px solid #2159AB;
+}
+
+
+.second-row-card-img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.second-row-card-para {
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.second-row-card-grow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 553px;
+    height: 171px;
+    border: 1px solid #2159AB;
+    flex-grow: 1;
+}
+
+.second-row-card-para-heading {
+    font-family: 'Roboto';
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-top: 16px;
+}
+
+.second-row-card-grow-para {
+    margin: 16px 16px 16px 57px;
+    color: #666666;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: left;
+}
+
+.second-row-card-date {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #666666;
+    margin-left: 610px;
+    margin-bottom: 30px;
+}
+
+.second-row-card-third {
+    display: flex;
+    flex-direction: column;
+    width: 266px;
+    height: 171px;
+    background: #FFFFFF;
+    border: 1px solid #2159AB;
+}
+
+.second-row-last-date {
+
+    color: #8f8f8f;
+    font-size: 12px;
+}
+
+.second-row-last-time {
+    font-weight: 500;
+    height: 12px;
+    color: #666666;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+/* Photos --Gallery  */
+.third-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-heading {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1A1A1A;
+}
+
+.images-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 170px);
+    grid-gap: var(--grid-gap);
+}
+
+.image-grid {
+    background-color: #8f8f8f;
+    height: 170px;
+    width: 270px;
+}
+
+/* Section Paragraph */
+.fourth-row {
+    display: flex;
+    flex-direction: row;
+    row-gap: 16px;
+
+}
+
+.fourth-row-para-heading {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #1A1A1A;
+}
+
+.fourth-row-first-para,
+.fourth-row-second-para,
+.fourth-row-third-para {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #666666;
+}
+
+.fourth-row-fourth-para {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #666666;
+    height: 120px;
+    width: 553px;
+}
+
+/* Final Section */
+.final-section {
+    display: flex;
+    margin-top: 64px;
+    gap: 116px;
+}
+
+.final-section-image {
+    width: 457px;
+    height: 300px;
+}
+
+.final-para-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.final-para-heading {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.015em;
+    color: #1A1A1A;
+}
+
+.final-paragraph {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.015em;
+    color: #666666;
+}

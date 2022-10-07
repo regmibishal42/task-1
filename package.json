@@ -1,0 +1,8 @@
+{
+  "name": "task-1",
+  "version": "1.0.0",
+  "description": "First Html/css task by infoDev",
+  "main": "index.js",
+  "author": "Vishal Regmi",
+  "license": "MIT"
+}
