@@ -17,6 +17,15 @@ const student = {
 console.log(`Name: ${student.name.first_name} ${student.name.last_name}`);
 console.log(`Class ${student.sclass.class} ${student.sclass.semester} semseter `);
 console.log(`Roll no: ${student.rollno}`);
+// lsiting all Keys
+console.log(Object.keys(student));//[ 'name', 'sclass', 'rollno' ]
+console.log(Object.entries(student));
+/* [
+    [ 'name', { first_name: 'Bishal', last_name: 'Regmi' } ],
+    [ 'sclass', { class: 'BIT', semester: 7 } ],
+    [ 'rollno', 5 ]
+  ]
+*/
 
 // deleting the roll no 
 delete student.rollno;
@@ -66,11 +75,30 @@ console.log(convertToKeyValuePair(sampleObejct2))
 
 // Question No 6
 // javascript function to reverse a number
+// first and simple method
 function reverseNumber(num){
     return parseInt(num.toString().split('').reverse().join(''));
 }
-console.log(reverseNumber(1234));
-// returns 4321
+console.log(reverseNumber(1234));// returns 4321
+
+// reversing number proper method 
+let reverse = function(x) {
+    let reverse = 0;
+    let sign = Math.sign(x);
+    if (sign === -1) {
+        x = x*sign;
+    }
+    while (x > 0) {
+        reverse = (reverse * 10) + (x%10);
+        x = parseInt(x/10, 10);
+    }
+    return reverse * sign;
+};
+
+console.log(reverse(1234));
+console.log(reverse(-11230));
+
+
 
 // Question No 7
 // js function that generates all combinations of string
@@ -138,6 +166,23 @@ function checkFifty(a,b){
 console.log(checkFifty(24,26));//true
 console.log(checkFifty(50,21));//true
 console.log(checkFifty(23,99));//false
+
+
+// sorry i missed question 13 by accident
+// here's the solution
+// Question No. 13
+// create a new string from first three charcters in lowercase ....
+
+const newStringMaker = (str) =>{
+    if(str.length <= 3) return str.toLowerCase();
+    return str.slice(0,3).toUpperCase();
+}
+console.log(newStringMaker('Res')); //res
+console.log(newStringMaker('Bishal'))//BIS
+
+
+
+
 
 // Question no. 14
 // arrange vowels and consotant in array
