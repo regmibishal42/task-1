@@ -11,21 +11,22 @@ module.exports = {
      */
     // npx sequalize-cli db:migrate
     // npx sequalize-cli db:migrate --env test
-    await queryInterface.createTable('employee',{
-      id:{
+    await queryInterface.addColumn(
+      'blog_tables',
+      'userId',
+      {
         type:Sequelize.INTEGER,
-        primaryKey:true,
-        autoIncrement:true
-      },
-      name:{
-        type:Sequelize.STRING(50),
-        allowNull:false
-      },
-      salary:{
-        type:Sequelize.INTEGER,
-        allowNull:false
+        references:{
+          model:{
+            tableName:'users',
+            key:'id'
+          },
+          onUpdate:'CASCADE',
+          onDelete:'SET NULL',
+          defaultValue:null
+        }
       }
-    })
+    );
   },
 
   async down (queryInterface, Sequelize) {
@@ -36,6 +37,6 @@ module.exports = {
      * await queryInterface.dropTable('users');
      */
     // npx sequelize-cli db:migrate:undo
-    await queryInterface.dropTable('employee');
+    await queryInterface.removeColumn('users','region_id');
   }
 };

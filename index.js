@@ -22,24 +22,8 @@ app.use(express.json());
 })();
 
  db.sync({force:false})
-// CommentModel.sync({alter:true});
-// BlogModel.sync({alter:true});
-// UserModel.sync({alter:true});
 
-// Database Models Association
 
-// one to many relationShip
-BlogModel.hasMany(CommentModel);
-CommentModel.belongsTo(BlogModel);
-
-// One-to-Many
-// Working
-UserModel.hasMany(BlogModel);
-BlogModel.belongsTo(UserModel);
-
-// One-many
-UserModel.hasMany(CommentModel);
-CommentModel.belongsTo(UserModel);
 
 
 app.use('/blog',blogs);
