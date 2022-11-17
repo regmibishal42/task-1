@@ -24,9 +24,7 @@ app.use(express.json());
  db.sync({force:false})
 
 
-
-
-app.use('/blog',blogs);
+app.use('/blogs',blogs);
 app.use('/comments',comments);
 app.use('/users',users);
 
