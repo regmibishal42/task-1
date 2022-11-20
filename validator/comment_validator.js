@@ -10,8 +10,15 @@ const createComment = Joi.object({
     userId:Joi.number().greater(0).positive().required()
 
 }); 
+const updateComment = Joi.object({
+    id:Joi.number().positive().greater(0).required(),
+    message:Joi.string().min(4).max(100).required()
+});
 
 const commentSchema = {
     createComment,
-    checkParams
+    checkParams,
+    updateComment
 }
+
+module.exports = commentSchema;

@@ -21,6 +21,7 @@ module.exports = {
             tableName:'users',
             key:'id'
           },
+          unique:true,
           onUpdate:'CASCADE',
           onDelete:'SET NULL',
           defaultValue:null

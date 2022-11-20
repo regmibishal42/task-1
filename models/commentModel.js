@@ -10,6 +10,20 @@ const CommentModel = db.define('comment_table',{
     message:{
         type: DataTypes.STRING(100),
         allowNull:false
+    },
+    userId:{
+        type:DataTypes.INTEGER,
+        references:{
+            model:'users',
+            key:'id'
+        }
+    },
+    blogId:{
+        type:DataTypes.INTEGER,
+        references:{
+            model:'comment_tables',
+            key:'id'
+        }
     }
 });
 // CommentModel.sync({force:true});

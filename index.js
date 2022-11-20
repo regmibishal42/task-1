@@ -6,7 +6,8 @@ const users = require('./controllers/userController');
 const BlogModel = require('./models/blogModel');
 const CommentModel = require('./models/commentModel');
 const UserModel = require('./models/userModel');
-
+const notFound = require('./exceptions/errors');
+const { notify } = require('./controllers/blogController');
 
 const app = express();
 app.use(express.json());
@@ -28,6 +29,7 @@ app.use('/blogs',blogs);
 app.use('/comments',comments);
 app.use('/users',users);
 
+app.use(notFound);
 
 app.listen(3000,()=>{
     console.log('Server running on port 3000')
