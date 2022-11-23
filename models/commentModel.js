@@ -21,7 +21,7 @@ const CommentModel = db.define('comment_table',{
     blogId:{
         type:DataTypes.INTEGER,
         references:{
-            model:'comment_tables',
+            model:'blog_tables',
             key:'id'
         }
     }

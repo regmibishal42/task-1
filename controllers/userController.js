@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const {getAllUsers,createUser} = require('../services/user-service');
+const uploadMiddleware = require('../utils/fileUploadMiddleware');
 
 
 router.get('/get-all',getAllUsers);
-router.post('/new',createUser);
+router.post('/new',uploadMiddleware.single('userImage'),createUser);
 module.exports = router;
 
 // const UserModel = require('../models/userModel');

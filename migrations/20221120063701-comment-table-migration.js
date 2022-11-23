@@ -9,7 +9,7 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    await queryInterface.createTable('comment_table',{
+    await queryInterface.createTable('comment_tables',{
       id:{
         type:Sequelize.INTEGER,
         primaryKey:true,
@@ -32,7 +32,7 @@ module.exports = {
     blogId:{
         type:Sequelize.INTEGER,
         references:{
-            model:'comment_tables',
+            model:'blog_tables',
             key:'id'
         },
         onUpdate:'CASCADE',
@@ -43,13 +43,7 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
-    await queryInterface.dropTable('comment_table');
+    await queryInterface.dropTable('comment_tables');
 
   }
 };

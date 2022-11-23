@@ -15,8 +15,9 @@ const getAllUsers = async(req,res,next) =>{
 const createUser = async(req,res,next)=>{
     try {
         const {userName} = req.body;
-        await userSchema.create.validateAsync({userName});
-        const user = await createNewUser({userName});
+        console.log('User Image Name is ',req.userProfileImage)
+        await userSchema.create.validateAsync({userName,image:req.userProfileImage});
+        const user = await createNewUser({userName,image:req.userProfileImage});
         customResponse(res,200,user,'Users Create Method','Post');
     } catch (error) {
         throw error;
