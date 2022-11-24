@@ -7,14 +7,18 @@ const UserModel = db.define('user',{
         primaryKey:true,
         autoIncrement:true
     },
-    userName:{
+    username:{
         type: DataTypes.STRING(100),
+        allowNull:false,
+    },
+    password:{
+        type:DataTypes.STRING(100),
         allowNull:false,
     },
     image:{
         type:DataTypes.STRING(150),
         allowNull:false,
-    }
+    },
 
 });
 

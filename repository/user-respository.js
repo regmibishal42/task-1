@@ -10,8 +10,13 @@ const createNewUser = async(data)=>{
     return await UserModel.create(data);
 }
 
+const loginUser = async(username,password)=>{
+    return await UserModel.findOne({where:{username:username,password:password}});
+}
+
 
 module.exports = {
     fetchAllUsers,
-    createNewUser
+    createNewUser,
+    loginUser
 }

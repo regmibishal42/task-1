@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const {getAllUsers,createUser} = require('../services/user-service');
+const {getAllUsers,createUser,login} = require('../services/user-service');
 const uploadMiddleware = require('../utils/fileUploadMiddleware');
 
 
 router.get('/get-all',getAllUsers);
 router.post('/new',uploadMiddleware.single('userImage'),createUser);
+router.post('/login',login);
 module.exports = router;
 
 // const UserModel = require('../models/userModel');

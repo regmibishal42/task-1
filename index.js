@@ -3,14 +3,13 @@ const db = require('./config/db');
 const blogs = require('./controllers/blogController');
 const comments = require('./controllers/commentController')
 const users = require('./controllers/userController');
-const BlogModel = require('./models/blogModel');
-const CommentModel = require('./models/commentModel');
-const UserModel = require('./models/userModel');
 const notFound = require('./exceptions/errors');
-const { notify } = require('./controllers/blogController');
+const passport = require('passport');
+const {initializingPassport} = require('./utils/passportConfig');
 
 const app = express();
 app.use(express.json());
+
 
 (async()=>{
     try{
@@ -21,14 +20,13 @@ app.use(express.json());
         console.log(error);
     }
 })();
-
- db.sync({force:false})
+app.use(passport.initialize());
+initializingPassport(passport);
 
 
 app.use('/blogs',blogs);
 app.use('/comments',comments);
 app.use('/users',users);
-
 app.use(notFound);
 
 app.listen(3000,()=>{

@@ -2,7 +2,8 @@ const Joi = require('joi');
 
 
 const create  = Joi.object({
-    userName:Joi.string().min(4).max(12).required(),
+    username:Joi.string().min(4).max(12).required(),
+    password:Joi.string().min(4).max(20).required(),
     image:Joi.string().min(5).required(),
 });
 
